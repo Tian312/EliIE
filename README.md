@@ -18,8 +18,6 @@ Including 3 primary steps:
 2. Attribute recognition
 3. Clinical relation identification
 
-Input: raw text
-Output: parsed information in XML format
 
 
 
