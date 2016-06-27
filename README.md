@@ -46,12 +46,13 @@ The example output would be Tempfile/test_NER.xml and Tempfile/test_Parsed.xml)
 __Prerequired Installation:__  
 -------
 
-1.  this script assumes MetaMap is installed and requires that the MetaMap support services are running. If you have MetaMap installed in `$MM`, these can be started as:       
+1.  This parser assumes MetaMap is installed and requires that the MetaMap support services are running. If you have MetaMap installed in `$MM`, these can be started as:       
     `$MM/bin/skrmedpostctl start`  
-    `$MM/bin/wsdserverctl start`  
+    `$MM/bin/wsdserverctl start`        
 
+    Go to `features_dir` and open `metamap_tag.sh`; follow the guidance to change the MetaMap root dir and start running  
 
-2.  python package:   
+2.  Python package required:   
     **nltk**  
     **networkx**  
     **codecs**  
