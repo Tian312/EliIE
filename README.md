@@ -1,25 +1,26 @@
 # CTEC_Parser
+```
+__INTRODUCTION__
 
 A parser designed for free text clinical trial eligibility criteria (CTEC).
 Parsing free text CTEC and formalizing into OMOP CDM v5 table (http://omop.org/CDM)
+Developed in Dr. Chunhua Weng's lab in Department of Biomedical Informatics at Columbia University (http://people.dbmi.columbia.edu/~chw7007/).  
 
-Developed in Dr. Chunhua Weng's lab in Department of Biomedical Informatics at Columbia University (http://people.dbmi.columbia.edu/~chw7007/).
+Author: Tian Kang
+Affiliation: Department of Biomedical Informatics, Columbia University
+Contact Email: tk2624@cumc.columbia.edu
+Last updated: June 2016  
+Version: 1.0  
 
-Email: tk2624@cumc.columbia.edu (Tian)
-
-============= Version 1.0 ================
-
-June 24th, 2016 (under development)
-
-Including 3 primary steps:
-
-1. Entity recogntion 
-2. Attribute recognition
-3. Clinical relation identification
-
+Including 3 primary steps:  
+1. Entity recogntion   
+2. Attribute recognition  
+3. Clinical relation identification  
+```
 
 
-''' __USER GUIDE__
+``` 
+__USER GUIDE__
 
 `Fast Usage`:  
 1. open parsing.sh    
@@ -36,9 +37,9 @@ Including 3 primary steps:
     1. `python NamedEntityRecognition.py Tempfile test.txt Tempfile`      
     2. `python Relation.py Tempfile test.txt`     
 The example output would be Tempfile/test_NER.xml and Tempfile/test_Parsed.xml)     
-'''  
+``` 
 
-'''
+```
 __Prerequired Installation:__  
 
 1.  this script assumes MetaMap is installed and requires that the MetaMap support services are running. If you have MetaMap installed in `$MM`, these can be started as:       
@@ -52,7 +53,7 @@ __Prerequired Installation:__
     **codecs**  
     **libsvm**  (https://www.csie.ntu.edu.tw/~cjlin/libsvm,https://github.com/cjlin1/libsvm/tree/master/python)   
     **practnlptools**   (https://pypi.python.org/pypi/practnlptools/1.0)
-'''
+```
 
 
 
