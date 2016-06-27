@@ -20,8 +20,9 @@ Including 3 primary steps:
 3. __Clinical relation identification__     
 
 
-__USER GUIDE__
+__USER GUIDE__    
 ----------
+First download all codes and decompress  
 
 __Fast Usage:__  
 1. open parsing.sh    
