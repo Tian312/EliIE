@@ -23,14 +23,14 @@ Including 3 primary steps:
 __USER GUIDE__
 ----------
 
-`Fast Usage`:  
+__Fast Usage:__  
 1. open parsing.sh    
 2. set the parameter lists to your task-based ones  
 3. run "`sh parsing.sh`" and parsing results will be generated in XML files.      
 (Directly running "sh parsing.sh" without changing see example output)
 
 
-`Step-by-stey Usage`:        
+__Step-by-stey Usage:__       
 1. NER step: run  
     `python NamedEntityRecognition.py $1:<input directory> $2:<input text name> $3:<output directory>`     
 2. Clinical Relation:  run   
