@@ -3,7 +3,8 @@
 __INTRODUCTION__
 ------------
 A parser designed for free text clinical trial eligibility criteria (CTEC).
-Parsing free text CTEC and formalizing into [OMOP CDM v5 table](http://omop.org/CDM)
+Parsing free text CTEC and formalizing into [OMOP CDM v5 table](http://omop.org/CDM)  
+
 Developed in [Dr. Chunhua Weng's lab](http://people.dbmi.columbia.edu/~chw7007) in Department of Biomedical Informatics at Columbia   
 
 
