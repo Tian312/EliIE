@@ -1,6 +1,6 @@
 # CTEC_Parser
 
-__INTRODUCTION__
+__Introduction__
 ------------
 A parser designed for free text clinical trial eligibility criteria (CTEC).
 Parsing free text CTEC and formalizing into [OMOP CDM v5 table](http://omop.org/CDM)  
@@ -20,7 +20,7 @@ Including 3 primary steps:
 3. __Clinical relation identification__     
 
 
-__USER GUIDE__    
+__User Guide__    
 ----------
 First download all codes and decompress  
 
