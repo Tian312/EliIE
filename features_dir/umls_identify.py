@@ -7,12 +7,12 @@ import sys,os,re,string,codecs
 # gengerate input trial format for MetaMap: (input is generated from t2c.text2conll, sents are seperated by '####')
 def formating_for_metamap(sent):
     id=0
-    temp_output=codecs.open('/Users/kangtian/Documents/NER_data/NER/parser_code/features/metamap_input.temp','w')
+    temp_output=codecs.open('Tempfile/metamap_input.temp','w')
     print >>temp_output,str(id)+'|'+sent
 
-    os.system('sh /Users/kangtian/Documents/NER_data/NER/parser_code/features/metamap_tag.sh /Users/kangtian/Documents/NER_data/NER/parser_code/features/metamap_input.temp >/dev/null')
-    metamap_output=codecs.open("/Users/kangtian/Documents/NER_data/NER/parser_code/features/metamap_input.temp.out")
-    os.system("rm /Users/kangtian/Documents/NER_data/NER/parser_code/features/metamap_input.temp.out /Users/kangtian/Documents/NER_data/NER/parser_code/features/metamap_input.temp")
+    os.system('sh features_dir/metamap_tag.sh Tempfile/metamap_input.temp >/dev/null')
+    metamap_output=codecs.open("Tempfile/metamap_input.temp.out")
+    os.system("rm Tempfile/metamap_input.temp.out Tempfile/metamap_input.temp")
     return(metamap_output)
 
 #lable terms with B: begin of UMLS concept, I : in the concept, O, no

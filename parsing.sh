@@ -18,16 +18,12 @@
 #   libsvm  (https://www.csie.ntu.edu.tw/~cjlin/libsvm , https://github.com/cjlin1/libsvm/tree/master/python)
 #   practnlptools   (https://pypi.python.org/pypi/practnlptools/1.0)
 
-#!!!! Personalize your arguements before parsing !!!!#
+#!!!! Personalize your parameters before parsing !!!!#
 
-INPUT_DIR='EXAMPLE_DIR'        # change to your input dir
-INPUT_TEXT='INPUT.txt'          # change to your input .txt file name
-OUTPUT_DIR='EXAMPLE_DIR'        # change to your output dir
+INPUT_DIR='Tempfile'        # change to your input dir
+INPUT_TEXT='test.txt'          # change to your input .txt file name
+OUTPUT_DIR='Tempfile'        # change to your output dir
 
-
-INPUT_DIR='Tempfile'
-INPUT_TEXT='test.txt'
-OUTPUT_DIR='Tempfile'
 
 python NamedEntityRecognition.py $INPUT_DIR $INPUT_TEXT $OUTPUT_DIR
 echo "Named Entity Recognition Finished!"
