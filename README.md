@@ -46,7 +46,7 @@ The example output would be Tempfile/test_NER.xml and Tempfile/test_Parsed.xml)
 __Prerequired Installation:__  
 -------
 
-1.  This parser assumes MetaMap is installed and requires that the MetaMap support services are running. If you have MetaMap installed in `$MM`, these can be started as:       
+1.  This parser assumes [MetaMap](https://metamap.nlm.nih.gov) is installed and requires that the MetaMap support services are running. If you have MetaMap installed in `$MM`, these can be started as:       
     `$MM/bin/skrmedpostctl start`  
     `$MM/bin/wsdserverctl start`        
 
