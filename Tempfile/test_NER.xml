@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+	<sent>
+		<text>- Uncontrolled hypertension ( systolic BP > 170 or diastolic BP > 100 ) .</text>
+		<attribute class='Qualifier' index='T1' start='1'> Uncontrolled </attribute>
+		 <entity class='Condition' index='T2' start='2'> hypertension </entity>
+		 <entity class='Observation' index='T3' start='4'> systolic BP </entity>
+		 <attribute class='Measurement' index='T4' start='6'> > 170 </attribute>
+		 <entity class='Observation' index='T5' start='9'> diastolic BP </entity>
+		 <attribute class='Measurement' index='T6' start='11'> > 100 </attribute>
+		
+
+	</sent>
+	<sent>
+		<text>- Use of any investigational drugs within 30 days or 5 half-lives , whichever is longer , prior to screening .</text>
+		<entity class='Drug' index='T7' start='4'> investigational drugs </entity>
+		 <attribute class='Temporal_measurement' index='T8' start='6'> within 30 days or 5 half-lives </attribute>
+		
+
+	</sent>
+</root>
