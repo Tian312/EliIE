@@ -3,19 +3,20 @@
 __INTRODUCTION__
 ------------
 A parser designed for free text clinical trial eligibility criteria (CTEC).
-Parsing free text CTEC and formalizing into OMOP CDM v5 table (http://omop.org/CDM)
-Developed in [Dr. Chunhua Weng's lab](http://people.dbmi.columbia.edu/~chw7007) in Department of Biomedical Informatics at Columbia 
+Parsing free text CTEC and formalizing into [OMOP CDM v5 table](http://omop.org/CDM)
+Developed in [Dr. Chunhua Weng's lab](http://people.dbmi.columbia.edu/~chw7007) in Department of Biomedical Informatics at Columbia   
 
-Author: Tian Kang
-Affiliation: Department of Biomedical Informatics, Columbia University
-Contact Email: tk2624@cumc.columbia.edu
-Last updated: June 2016  
-Version: 1.0  
+
+__Author__: Tian Kang  
+__Affiliation__: Department of Biomedical Informatics, Columbia University    
+__Contact Email__: tk2624@cumc.columbia.edu     
+__Last updated__: June 2016      
+__Version__: 1.0      
 
 Including 3 primary steps:  
-1. Entity recogntion   
-2. Attribute recognition  
-3. Clinical relation identification  
+1. __Entity recogntion__     
+2. __Attribute recognition__     
+3. __Clinical relation identification__     
 
 
 __USER GUIDE__
