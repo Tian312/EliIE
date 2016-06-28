@@ -15,10 +15,11 @@ __Contact Email__: tk2624@cumc.columbia.edu
 __Last update__: June 2016      
 __Version__: 1.0      
 
-Including 3 primary steps:  
+Primary steps:  
 1. __Entity recogntion__     
 2. __Attribute recognition__     
-3. __Clinical relation identification__     
+3. __Clinical relation identification__   
+4. __Data standardization__  
 
 
 __User Guide__    
