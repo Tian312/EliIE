@@ -4,6 +4,7 @@ __Introduction__
 ------------
 A parser designed for free text clinical trial eligibility criteria (CTEC).
 Parsing free text CTEC and formalizing into [OMOP CDM v5 table](http://omop.org/CDM)  
+The parser was trained on 250 clinical trials on Alzheimer's. The annotation guidelines is in folder Supple Materials.  
 
 Developed in [Dr. Chunhua Weng's lab](http://people.dbmi.columbia.edu/~chw7007) in Department of Biomedical Informatics at Columbia   
 
@@ -65,6 +66,7 @@ __Functions Under Developing__
 
 1. Stadardize entities and attributes concepts using [OHDSI standards](http://www.ohdsi.org/data-standardization/)  
 2. Convert the final format into JSON  
+3. Extend use case to more diseases  
 
 [BACK TO TOP](#readme)
 
