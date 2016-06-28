@@ -59,6 +59,13 @@ __Prerequired Installation:__
     [**libsvm**](https://www.csie.ntu.edu.tw/~cjlin/libsvm)   
     [**practnlptools**](https://pypi.python.org/pypi/practnlptools/1.0)
 
+
+__Functions Under Developing__
+-------
+
+1. Stadardize entities and attributes concepts using [OHDSI standards](http://www.ohdsi.org/data-standardization/)  
+2. Convert the final format into JSON  
+
 [BACK TO TOP](#readme)
 
 
