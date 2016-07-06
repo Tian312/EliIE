@@ -4,6 +4,7 @@ __Introduction__
 ------------
 A parser designed for free text clinical trial eligibility criteria (CTEC).
 Parsing free text CTEC and formalizing into [OMOP CDM v5 table](http://omop.org/CDM)  
+The parser was trained on 250 clinical trials on Alzheimer's. The annotation guidelines is in folder Supple Materials.  
 
 Developed in [Dr. Chunhua Weng's lab](http://people.dbmi.columbia.edu/~chw7007) in Department of Biomedical Informatics at Columbia   
 
@@ -11,13 +12,14 @@ Developed in [Dr. Chunhua Weng's lab](http://people.dbmi.columbia.edu/~chw7007) 
 __Author__: Tian Kang  
 __Affiliation__: Department of Biomedical Informatics, Columbia University    
 __Contact Email__: tk2624@cumc.columbia.edu     
-__Last updated__: June 2016      
+__Last update__: June 2016      
 __Version__: 1.0      
 
-Including 3 primary steps:  
+Primary steps:  
 1. __Entity recogntion__     
 2. __Attribute recognition__     
-3. __Clinical relation identification__     
+3. __Clinical relation identification__   
+4. __Data standardization__  
 
 
 __User Guide__    
@@ -46,17 +48,26 @@ The example output would be Tempfile/test_NER.xml and Tempfile/test_Parsed.xml)
 __Prerequired Installation:__  
 -------
 
-1.  this script assumes MetaMap is installed and requires that the MetaMap support services are running. If you have MetaMap installed in `$MM`, these can be started as:       
+1.  This parser assumes [MetaMap](https://metamap.nlm.nih.gov) is installed and requires that the MetaMap support services are running. If you have MetaMap installed in `$MM`, these can be started as:       
     `$MM/bin/skrmedpostctl start`  
-    `$MM/bin/wsdserverctl start`  
+    `$MM/bin/wsdserverctl start`        
 
+    Go to `features_dir` and open `metamap_tag.sh`; follow the guidance to change the MetaMap root dir and start running  
 
-2.  python package:   
+2.  Python package required:   
     **nltk**  
     **networkx**  
     **codecs**  
     [**libsvm**](https://www.csie.ntu.edu.tw/~cjlin/libsvm)   
     [**practnlptools**](https://pypi.python.org/pypi/practnlptools/1.0)
+
+
+__Functions Under Developing__
+-------
+
+1. Stadardize entities and attributes concepts using [OHDSI standards](http://www.ohdsi.org/data-standardization/)  
+2. Convert the final format into JSON  
+3. Extend use case to more diseases  
 
 [BACK TO TOP](#readme)
 
