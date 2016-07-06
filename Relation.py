@@ -32,12 +32,16 @@ root = tree.getroot()
 relations={}
 index=[]
 for child in root:
+
     syn_features=codecs.open('Tempfile/relation_scale','w')
     temp_pairs=relation_features.generate_pairs(child,syn_features)
-
-    y,x=svmutil.svm_read_problem('Tempfile/relation_scale')
-    p_label,p_acc,p_val=svmutil.svm_predict(y,x,m)
+    if temp_pairs:
+        y,x=svmutil.svm_read_problem('Tempfile/relation_scale')
+        p_label,p_acc,p_val=svmutil.svm_predict(y,x,m)
     #print len(p_label),len(temp_pairs)
+    else:
+        p_label=[]
+        temp_pairs=[]
     for j in range(0,len(p_label)):
         #print j
         relations[temp_pairs[j]]=p_label[j]

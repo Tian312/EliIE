@@ -10,7 +10,7 @@
 #    $MM/bin/skrmedpostctl start
 #    $MM/bin/wsdserverctl start
 
-METAMAP_ROOT=c
+METAMAP_ROOT=~/Tools/MetaMap
 
 # -N specifies "fielded" output and is assumed by tools using this script
 # -J specifies restriction to the given UMLS semantic types

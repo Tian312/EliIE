@@ -114,12 +114,19 @@ def run_crf( model_dir, matrix_dir, output_dir):
 
 
 #========== test ==========
-sents=nltk.sent_tokenize(mytrial)
+ori_sents=mytrial.split("\n")
+sents=[]
+for sent in ori_sents:
+    s=nltk.sent_tokenize(sent)
+    sents.extend(s)
+
 for sent in sents:
 
     cleansent=preprocess.preprocess(sent)
+    print "==",cleansent,"=="
     filteredsent=preprocess.ec_filtering(cleansent)
     if filteredsent:
+
         add_feature(filteredsent,mymatrix)
 
 
