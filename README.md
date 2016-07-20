@@ -21,6 +21,13 @@ Primary steps:
 3. __Clinical relation identification__   
 4. __Data standardization__  
 
+Exmaple input:   
+  
+![](https://github.com/Tian312/CTEC_Parser/blob/master/Supp%20Materials/example_input.png)
+
+Example output:   
+
+![](https://github.com/Tian312/CTEC_Parser/blob/master/Supp%20Materials/example_output.png)
 
 __User Guide__    
 ----------
