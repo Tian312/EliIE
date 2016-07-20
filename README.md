@@ -12,7 +12,7 @@ Developed in [Dr. Chunhua Weng's lab](http://people.dbmi.columbia.edu/~chw7007) 
 __Author__: Tian Kang  
 __Affiliation__: Department of Biomedical Informatics, Columbia University    
 __Contact Email__: tk2624@cumc.columbia.edu     
-__Last update__: June 2016      
+__Last update__: June 20, 2016  (add Negation detection in NER step)       
 __Version__: 1.0      
 
 Primary steps:  
