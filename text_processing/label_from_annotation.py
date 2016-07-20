@@ -18,10 +18,11 @@ import sys,os,re,string
 #Person
 #Negation_cue
 
-def ann_tagging(ann_file,raw_text):
+def ann_tagging(ann_file,raw_text,tag_included):
     letters=list(raw_text.rstrip())
 # start tagging from annotation file
     for line in ann_file:
+        line=line.rstrip()
         if re.search("^R\d+",line):
             info=line.split()
             relation=info[1]
@@ -34,14 +35,11 @@ def ann_tagging(ann_file,raw_text):
 # T30	Condition 3109 3129	cognitive impairment
             tag=info[1]
             index=info[0]
-
-            if tag=='Negation_cue':
-                continue
-            if tag=='Anatomic_location':
-                continue
-            if tag=='Person':
+            #print tag_included
+            if tag not in tag_included:
                 continue
             #print "============"+tag
+           # print line
             pos1=int(info[2])-1
             pos2=int(info[3])
             del info[0]
@@ -137,8 +135,10 @@ def ann_tagging(ann_file,raw_text):
             letters[pos2-1]=term_tagged
             for i in range(pos1,pos2-1):
                 letters[i]=" "
+
     text_tagged=''.join(letters)
     text_tagged=re.sub("e\.g\.","eg ",text_tagged)
+    #print "======",text_tagged
     context_multi=re.findall('\w/\w',text_tagged)
     for m in context_multi:
         info=re.search('(\w)/(\w)',m)

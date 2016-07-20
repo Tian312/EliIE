@@ -5,14 +5,25 @@ import sys,os,re,string,codecs
 
 
 # gengerate input trial format for MetaMap: (input is generated from t2c.text2conll, sents are seperated by '####')
-def formating_for_metamap(sent):
+def formating_for_metamap(current_path,sent,filename):
     id=0
-    temp_output=codecs.open('Tempfile/metamap_input.temp','w')
-    print >>temp_output,str(id)+'|'+sent
 
-    os.system('sh features_dir/metamap_tag.sh Tempfile/metamap_input.temp >/dev/null')
-    metamap_output=codecs.open("Tempfile/metamap_input.temp.out")
-    os.system("rm Tempfile/metamap_input.temp.out Tempfile/metamap_input.temp")
+
+    input_dir=current_path+'/Tempfile/metamap_input'+filename+'.temp'
+    output_dir=input_dir+'.out'
+    metamap_command='sh '+current_path+'/features_dir/metamap_tag.sh '+input_dir+' >/dev/null'
+    rm_command='rm '+input_dir+' '+output_dir
+
+    temp_output=codecs.open(input_dir,'w')
+
+ #   temp_output=codecs.open('Tempfile/metamap_input.temp','w')
+    print >>temp_output,str(id)+'|'+sent
+    os.system(metamap_command)
+ #   os.system('sh features_dir/metamap_tag.sh Tempfile/metamap_input.temp >/dev/null')
+    metamap_output=codecs.open(output_dir)
+ #   metamap_output=codecs.open("Tempfile/metamap_input.temp.out")
+
+    os.system(rm_command)
     return(metamap_output)
 
 #lable terms with B: begin of UMLS concept, I : in the concept, O, no

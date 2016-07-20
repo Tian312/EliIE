@@ -1,0 +1,5 @@
+Percentage correct:	0.0
+T1	 memory difficulties 	- Cognitive complaints and / or memory difficulties which are verified as new onset by an informant .	negated	- Cognitive complaints and / or [PHRASE]memory difficulties[PHRASE] which are verified as new onset by an informant .	affirmed
+T1	 Cognitive Global Rating 	- Cognitive Global Rating consistent with mild impairment or deterioration from premorbid baseline .	negated	- [PHRASE]Cognitive Global Rating[PHRASE] consistent with mild impairment or deterioration from premorbid baseline .	affirmed
+T1	 impairment 	- Cognitive Global Rating consistent with mild impairment or deterioration from premorbid baseline .	negated	- Cognitive Global Rating consistent with mild [PHRASE]impairment[PHRASE] or deterioration from premorbid baseline .	affirmed
+T1	 deterioration 	- Cognitive Global Rating consistent with mild impairment or deterioration from premorbid baseline .		- Cognitive Global Rating consistent with mild impairment or [PHRASE]deterioration[PHRASE] from premorbid baseline .	affirmed

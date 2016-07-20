@@ -1,0 +1,4 @@
+[' memory difficulties '] - Cognitive complaints and / or memory difficulties which are verified as new onset by an informant . negated affirmed
+[' Cognitive Global Rating '] - Cognitive Global Rating consistent with mild impairment or deterioration from premorbid baseline . negated affirmed
+[' impairment '] - Cognitive Global Rating consistent with mild impairment or deterioration from premorbid baseline . negated affirmed
+[' deterioration '] - Cognitive Global Rating consistent with mild impairment or deterioration from premorbid baseline .  affirmed

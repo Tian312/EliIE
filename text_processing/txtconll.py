@@ -52,12 +52,23 @@ def conll2txt (conll_file):
     i=0
     for line in conll_file:
         line=line.strip()
+
+        line=re.sub("<=","smaller_equal_than",line)
+        line=re.sub(">=","larger_equal_than",line)
+        line=re.sub("<","smaller_than",line)
+        line=re.sub(">","larger_than",line)
+
+        line=re.sub("larger_thanlarger_thanNCT","##NCT",line)
+
         if not line.strip():
             if term_flag>0:
                 last_label="</entity>\n\t\t"
                 terms.append(last_label)
                 term_flag=0
             new_line=" ".join(raw_terms)
+
+
+
             concept=" ".join(terms)
             entity.append(concept)
             sents.append(new_line)
@@ -86,6 +97,7 @@ def conll2txt (conll_file):
             else:
                 index=" "
             label=info[-1]
+            raw_index=info[-2]
 
             if term_flag > 0 and re.search("^B",label):
                 last_label="</entity>\n\t\t"
@@ -115,8 +127,8 @@ def conll2txt (conll_file):
 
 def clean_txt(tagged_text): # from tagged_text to raw_text
 
-    clean_text=re.sub("index=\'T\d+\'","",tagged_text)
-    clean_text=re.sub("\<\w+\ >","",clean_text)
+   # clean_text=re.sub("index=\'T\d+\'","",tagged_text)
+    clean_text=re.sub("\<\w+\ >","",tagged_text)
     clean_text=re.sub("\<\/\w+\>","",clean_text)
     return clean_text
 
