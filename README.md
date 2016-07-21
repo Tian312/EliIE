@@ -34,10 +34,10 @@ __User Guide__
 First download all codes and decompress  
 
 __Fast Usage:__  
-1. open parsing.sh    
+1. open `wrapper_for_parsing.sh`    
 2. set the parameter lists to your task-based ones  
-3. run "`sh parsing.sh`" and parsing results will be generated in XML files.      
-(Directly running "sh parsing.sh" without changing see example output)
+3. run "`sh wrapper_for_parsing.sh`" and parsing results will be generated in XML files.      
+(See example output directly running "`sh wrapper\_for\_parsing.sh`" without changing )
 
 
 __Step-by-stey Usage:__       
