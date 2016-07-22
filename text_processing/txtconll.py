@@ -52,13 +52,13 @@ def conll2txt (conll_file):
     i=0
     for line in conll_file:
         line=line.strip()
-
+        line=re.sub(">>NCT","##NCT",line)
         line=re.sub("<=","smaller_equal_than",line)
-        line=re.sub(">=","larger_equal_than",line)
+        line=re.sub(">=","larger equal_than",line)
         line=re.sub("<","smaller_than",line)
         line=re.sub(">","larger_than",line)
 
-        line=re.sub("larger_thanlarger_thanNCT","##NCT",line)
+
 
         if not line.strip():
             if term_flag>0:
@@ -78,8 +78,8 @@ def conll2txt (conll_file):
             i=0
         else:
 
-            if re.search(">>NCT",line):
-                line=re.sub(">>","",line)
+            if re.search("##NCT",line):
+                line=re.sub("##","",line)
             #line=re.sub("\<=","is_less_equal_than",line)
             line=re.sub("\:","",line)
             #line=re.sub("\>=","is_greater_equal_than",line)

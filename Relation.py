@@ -37,8 +37,14 @@ def main():
         syn_features=codecs.open('Tempfile/relation_scale','w')
         temp_pairs=relation_features.generate_pairs(child,syn_features)
         if temp_pairs:
-            y,x=svmutil.svm_read_problem('Tempfile/relation_scale')
-            p_label,p_acc,p_val=svmutil.svm_predict(y,x,m)
+            try:
+                y,x=svmutil.svm_read_problem('Tempfile/relation_scale')
+                p_label,p_acc,p_val=svmutil.svm_predict(y,x,m)
+            except ValueError:
+                for child2 in child.findall('text'):
+                    print child2.text
+                continue
+
         #print len(p_label),len(temp_pairs)
         else:
             p_label=[]

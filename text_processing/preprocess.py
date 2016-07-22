@@ -25,13 +25,15 @@ def ec_filtering(input_ec):
 
 def preprocess(rawtext):
 
-    text=re.sub('>='," %%% ",rawtext.decode('utf-8'))
-    #text=re.sub('\n',' ',text)
-    text=re.sub('<=', ' @@@ ',text)
+    #text=re.sub('>='," %%% ",rawtext.decode('utf-8'))
+    text=re.sub('>='," larger equal than ",rawtext.decode('utf-8'))
+    text=re.sub('<='," smaller equal than ",text)
+
+    #text=re.sub('<=', ' @@@ ',text)
     text=re.sub('>>','~~~',text)
     text=re.sub(',',' ,',text)
-    text=re.sub('>',' > ',text)
-    text=re.sub('<',' < ',text)
+    text=re.sub('>',' larger than ',text)
+    text=re.sub('<',' smaller than ',text)
     text=re.sub(';',' ; ',text)
     text=re.sub('~~~','>>',text)
     text=re.sub('=', ' = ',text)
@@ -40,8 +42,8 @@ def preprocess(rawtext):
     text=re.sub('\]', ' ] ',text)
     text=re.sub('\(', ' ( ',text)
     text=re.sub('\)', ' ) ',text)
-    text=re.sub('%%%', '>=',text)
-    text=re.sub('@@@', '<=',text)
+    #text=re.sub('%%%', '>=',text)
+    #text=re.sub('@@@', '<=',text)
 
     nums=re.findall('\d-\d',text)
     for num in nums:

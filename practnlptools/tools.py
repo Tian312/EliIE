@@ -61,6 +61,7 @@ class Annotator:
 		cwd=os.getcwd()
 		os.chdir(package_directory)
 		p = subprocess.Popen(senna_executable,stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+
 		senna_stdout = p.communicate(input=input_data)[0]
 		os.chdir(cwd)
 		return senna_stdout.split("\n\n")[0:-1]
@@ -87,8 +88,10 @@ class Annotator:
 		os.chdir(package_directory)
 		p = subprocess.Popen(senna_executable,stdout=subprocess.PIPE, stdin=subprocess.PIPE)
 		senna_stdout = p.communicate(input=input_data)[0]
+
 		os.chdir(cwd)
 		return senna_stdout
+
 	def getDependency(self,parse):
 		package_directory = os.path.dirname(os.path.abspath(__file__))
 		cwd=os.getcwd()
@@ -97,10 +100,11 @@ class Annotator:
 		parsefile.write(parse)
 		parsefile.close()
 		p=subprocess.Popen(['java','-cp','stanford-parser.jar', 'edu.stanford.nlp.trees.EnglishGrammaticalStructure', '-treeFile', cwd+'/in.parse','-collapsed'],stdout=subprocess.PIPE,stderr=subprocess.PIPE)
-		p.wait()	
+		p.wait()
 		stanford_out=p.stdout.read()
 		os.chdir(cwd)
 		return stanford_out.strip()
+
 	def getBatchAnnotations(self,sentences,dep_parse=False):
 		annotations=[]	
 		batch_senna_tags=self.getSennaTagBatch(sentences)
