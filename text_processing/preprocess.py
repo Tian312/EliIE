@@ -25,6 +25,11 @@ def ec_filtering(input_ec):
 
 def preprocess(rawtext):
 
+    decimal=re.findall('\d\.\d',rawtext)
+    for d in decimal:
+        de = re.search('(\d)\.(\d)', d)
+        rawtext = re.sub(de.group(1) + '\.' + de.group(2), de.group(1) + 'DECIMALSIGN' + de.group(2), rawtext)
+
     #text=re.sub('>='," %%% ",rawtext.decode('utf-8'))
     text=re.sub('>='," larger equal than ",rawtext.decode('utf-8'))
     text=re.sub('<='," smaller equal than ",text)
@@ -44,6 +49,9 @@ def preprocess(rawtext):
     text=re.sub('\)', ' ) ',text)
     #text=re.sub('%%%', '>=',text)
     #text=re.sub('@@@', '<=',text)
+    #text = re.sub( "larger equal than",'>=', rawtext.decode('utf-8'))
+
+    #text = re.sub( "smaller equal than", '<=',text)
 
     nums=re.findall('\d-\d',text)
     for num in nums:
@@ -54,5 +62,7 @@ def preprocess(rawtext):
         p=re.search('(\w)\.\s?',ps)
 
         text=re.sub(p.group(1)+'\.',p.group(1)+' . ',text)
+
+    text=re.sub('DECIMALSIGN','.',text)
     return (text)
 

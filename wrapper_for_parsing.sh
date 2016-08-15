@@ -21,11 +21,11 @@
 #!!!! Personalize your parameters before parsing !!!!#
 
 INPUT_DIR='Tempfile'        # change to your input dir
-INPUT_TEXT='test.txt'          # change to your input .txt file name
+INPUT_TEXT='temp.txt'          # change to your input .txt file name
 OUTPUT_DIR='Tempfile'        # change to your output dir
 
 
 python NamedEntityRecognition.py $INPUT_DIR $INPUT_TEXT $OUTPUT_DIR
 echo "Named Entity Recognition Finished!"
-python Relation.py $INPUT_TEXT $OUTPUT_DIR
+python Relation.py  $OUTPUT_DIR $INPUT_TEXT
 echo "Parsing Finished!"

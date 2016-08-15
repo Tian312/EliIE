@@ -10,11 +10,12 @@ __author__ = 'Tian Kang'
 #                                                                  #
 #==================================================================#
 import os,codecs,re
+import sys
+
 from libsvm import svmutil
 from features_dir import relation_features
 from xml.etree import ElementTree as ET
 import sys
-
 def main():
     m=svmutil.svm_load_model('trained_models/svm.model')
     relation_tag={0:'None',1:'has_value',2:'has_temp',3:'modified_by'}
@@ -26,6 +27,7 @@ def main():
 
     input_dir=sys.argv[1]+'/'+filename+'_NER.xml'
     output_dir=sys.argv[1]+'/'+filename+'_Parsed.xml'
+    print "Reading NER results from ", input_dir
 
     tree = ET.ElementTree(file=input_dir)
 
@@ -86,8 +88,13 @@ def main():
                         child2.attrib['relation']=child2.attrib['relation']+"|"+other_index+":"+relation_type
             #print child2.text,child2.attrib['index'],child2.attrib['relation']
 
-    os.system('rm in.parse Tempfile/relation_scale')
+    relation_excuted=os.path.exists("in.parse")
+    if relation_excuted:
+        os.system('rm in.parse')
+    os.system('rm Tempfile/relation_scale')
+    print "Writing Relation xml to ", output_dir
     new_tree=codecs.open(output_dir,'w')
     tree.write(new_tree)
+    print "Finished!"
 
 if __name__ == '__main__': main()

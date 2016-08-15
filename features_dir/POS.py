@@ -1,6 +1,10 @@
 __author__ = 'Tian Kang'
 
-import sys,nltk
+import sys
+
+import nltk
+
+
 import string,os
 reload(sys)
 

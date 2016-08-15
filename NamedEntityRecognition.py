@@ -11,6 +11,8 @@ __author__ = 'Tian Kang'
 #                                                                  #
 #==================================================================#
 
+import os.path
+_PATH = os.path.join( *os.path.split(__file__)[:-1] )
 import sys,string,os,re,csv
 import codecs
 from text_processing import txtconll as t2c
@@ -18,6 +20,7 @@ from text_processing import preprocess
 from features_dir import POS,BrownClustering,umls_identify
 from text_processing import label_from_annotation as labeling
 import nltk
+import screen
 from nltk.stem.lancaster import LancasterStemmer
 from bin import readfromdir
 from bin.negex import *
@@ -111,6 +114,8 @@ def generate_XML(crfresult_input,NERxml_output):
         if sent == "":
             continue
         clean_sent=t2c.clean_txt(sent)
+       # clean_sent = re.sub('>=', " largerequalthan ", clean_sent.decode('utf-8'))
+       # clean_sent = re.sub('<=', " smallerequalthan ", clean_sent)
         #print sent
         #print "===",entity[j]
         pattern='class=\'(\w+)\''
@@ -148,7 +153,7 @@ def run_crf( model_dir, matrix_dir, output_dir):
     os.system(command)
 
 def detect_negation(concept,sent,irules):
-        pattern="^\s?(\w+.*\w+)\s?"
+        pattern="^\s?(\w?.*\w?)\s?"
         match=re.search(pattern,concept)
         clean_concept=match.group(1)
         words=re.split("\s+",clean_concept)
@@ -156,7 +161,7 @@ def detect_negation(concept,sent,irules):
         if len(words)>2:
             words=[words[-2],words[-1]]
             concept=" ".join(words)
-            print concept
+           # print concept
         tagger = negTagger(sentence = sent, phrases =concept, rules = irules, negP=False)
         tag=tagger.getNegationFlag()
 
@@ -227,6 +232,7 @@ def main():
 
 # make conll matrix
     for sent in sents:
+
         cleansent=preprocess.preprocess(sent)
         filteredsent=preprocess.ec_filtering(cleansent)
         if filteredsent:

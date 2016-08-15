@@ -78,8 +78,8 @@ def ann_tagging(ann_file,raw_text,tag_included):
 
      #========================test==========
             unit=re.search("\[AV\]",new_term)
-            if unit:
-                print new_term
+            #if unit:
+            #    print new_term
      #=============
             info=new_term.split()
 
@@ -98,7 +98,8 @@ def ann_tagging(ann_file,raw_text,tag_included):
                     word_tagged=term+"__B-"+tag+"__"+index+" "
                     #========================test==========
                     if unit:
-                        print term+"=="+word_tagged
+                        1
+                        #print term+"=="+word_tagged
                     #==============================================
                     begin+=1
                     term_tagged=term_tagged+" "+word_tagged
@@ -106,7 +107,8 @@ def ann_tagging(ann_file,raw_text,tag_included):
                     word_tagged=term+"__I-"+tag+"__O"
                      #========================test==========
                     if unit:
-                        print term+"=="+word_tagged
+                        1
+                        #print term+"=="+word_tagged
                     #========================test==========
                     begin+=1
                     term_tagged=term_tagged+" "+word_tagged
