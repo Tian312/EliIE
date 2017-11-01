@@ -1,3 +1,4 @@
+#!/usr/bin/python
 __author__ = 'Tian Kang'
 
 #============ Parser step 1: Entity&Attribute recognition     =====#
@@ -20,6 +21,7 @@ from text_processing import preprocess
 from features_dir import POS,BrownClustering,umls_identify
 from text_processing import label_from_annotation as labeling
 import nltk
+#nltk.download('averaged_perceptron_tagger')
 import screen
 from nltk.stem.lancaster import LancasterStemmer
 from bin import readfromdir
@@ -102,6 +104,7 @@ def txt2matrix_fortrain(ann_dir,mytrain,tag_included,filename,curpath):
     if i%5==0:
         print str(i) +" files finished"
 
+#txt2matrix_fortrain("training","Tempfile/relation.matrix",['Observation','Condition','Drug','Procedure_Device'],)
 def generate_XML(crfresult_input,NERxml_output):
     sents,entity=t2c.conll2txt(crfresult_input)
     entity_lists=['Condition','Observation','Drug','Procedure_Device']
@@ -162,9 +165,10 @@ def detect_negation(concept,sent,irules):
             words=[words[-2],words[-1]]
             concept=" ".join(words)
            # print concept
-        tagger = negTagger(sentence = sent, phrases =concept, rules = irules, negP=False)
-        tag=tagger.getNegationFlag()
+        tagger = negTagger(sentence = sent, phrases =[concept], rules = irules, negP=False)
 
+        tag=tagger.getNegationFlag()
+        #print concept,tag
         negation="N"
         if tag=="negated":
             negation="Y"
@@ -181,6 +185,7 @@ attribute_lists=['Qualifier','Measurement','Temporal_measurement']
 tag_included=entity_lists
 tag_included.append('Negation_cue')
 curpath = os.path.abspath(os.curdir)
+
 
 
 
@@ -249,19 +254,22 @@ def main():
     root = NER_tree.getroot()
     rfile = open(r'bin/EC_triggers.txt')
     irules = sortRules(rfile.readlines())
+
+
     for child in root:
 
         sent=''
         for child2 in child.findall('text'):
             sent=child2.text
-        for child2 in child.findall('entity'):
 
+        for child2 in child.findall('entity'):
             if child2.attrib['class']=='Negation_cue':
                 continue
             child2.attrib['negated']="N"
             concept=child2.text
-            neg_tag=detect_negation(concept,sent,irules)
 
+            neg_tag=detect_negation(concept,sent,irules)
+            #print concept, neg_tag
             child2.attrib['negated']=neg_tag
     print "negation finished!"
     new_tree_name=filename+"_NER.xml"
@@ -271,7 +279,6 @@ def main():
     NER_tree.write(NER_addneg_tree)
     rm_comand='rm '+matrix_dir+' '+crf_result_dir+' '+output_dir
     os.system(rm_comand)
-
 
 
 

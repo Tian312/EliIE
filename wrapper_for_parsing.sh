@@ -21,7 +21,7 @@
 #!!!! Personalize your parameters before parsing !!!!#
 
 INPUT_DIR='Tempfile'        # change to your input dir
-INPUT_TEXT='temp.txt'          # change to your input .txt file name
+INPUT_TEXT='test.txt'          # change to your input .txt file name
 OUTPUT_DIR='Tempfile'        # change to your output dir
 
 

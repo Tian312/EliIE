@@ -11,7 +11,6 @@ __author__ = 'Tian Kang'
 #==================================================================#
 import os,codecs,re
 import sys
-
 from libsvm import svmutil
 from features_dir import relation_features
 from xml.etree import ElementTree as ET
