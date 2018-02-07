@@ -1,4 +1,4 @@
-# CTEC_Parser
+# EliIE (Eligiblity Criteria Information Extraction)
 
 __Introduction__
 ------------
@@ -14,6 +14,7 @@ __Affiliation__: Department of Biomedical Informatics, Columbia University
 __Contact Email__: tk2624@cumc.columbia.edu     
 __Last update__: June 20, 2016  (add Negation detection in NER step)       
 __Version__: 1.0      
+__Citation__:[EliIE: An open-source information extraction system for clinical trial eligibility criteria](https://academic.oup.com/jamia/article/24/6/1062/3098256)
 
 Primary steps:  
 1. __Entity recogntion__     
