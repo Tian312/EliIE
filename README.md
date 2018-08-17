@@ -69,6 +69,8 @@ __Prerequired Installation:__
     [**libsvm**](https://www.csie.ntu.edu.tw/~cjlin/libsvm)   
     [**practnlptools**](https://pypi.python.org/pypi/practnlptools/1.0)
 
+3.  CRF ++   
+Easy installation following the instruction: https://taku910.github.io/crfpp/
 
 __Functions Under Developing__
 -------
